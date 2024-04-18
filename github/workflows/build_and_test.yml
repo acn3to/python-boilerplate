@@ -1,0 +1,27 @@
+name: Build and Test
+
+on:
+  push: {}
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          poetry install --no-interaction
+
+      - name: Run Pylint
+        run: |
+          poetry run pylint src/
+
+      - name: Run tests
+        run: |
+          poetry run pytest

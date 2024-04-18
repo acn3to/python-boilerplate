@@ -1,0 +1,12 @@
+services:
+  app:
+    container_name: boilerplate-app
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+
+  redis:
+    container_name: boilerplate-redis
+    image: "redis:alpine"

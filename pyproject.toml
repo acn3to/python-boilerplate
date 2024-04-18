@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "python-boilerplate"
+version = "0.1.0"
+description = "A Python boilerplate project"
+authors = ["acn3to <costanetoow@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^3.0.3"
+redis = "^5.0.3"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.1.0"
+pytest = "^8.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

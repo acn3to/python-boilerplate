@@ -1,0 +1,17 @@
+[DEFAULT]
+# Enable various checkers (uncomment to activate)
+enabled=your-errors,bare-except,unused-variable,unused-argument,
+        missing-final-newline,invalid-name,redundant-unittest-case,
+        missing-module-docstring,missing-function-docstring,
+        missing-class-docstring,no-self-use,import-error,unused-import,
+        import-outside-toplevel,bad-continuation,whitespace-after-comma,
+        whitespace-around-operator,invalid-spaces-before-closing-bracket
+
+# Logging level (e.g., info, debug)
+verbose=
+
+# Additional checkers (consider enabling for specific needs)
+# enabled=too-many-arguments,too-many-branches,too-many-locals
+
+# Ignore specific directories/files (adjust paths as needed)
+# ignore=*/migrations/*,*/tests/fixtures/*
