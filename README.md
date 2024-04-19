@@ -18,6 +18,7 @@ This is a simple Python boilerplate project that can be used as a starting point
 ├── poetry.lock
 ├── pyproject.toml
 ├── .pylintrc
+├── run_process.sh
 └── README.md
 ```
 
