@@ -5,7 +5,7 @@ This is a simple Python boilerplate project that can be used as a starting point
 ## Project Structure
 
 ```bash
-├── github
+├── .github
 │   └── workflows
 │       └── build_and_test.yml
 ├── src
@@ -33,7 +33,7 @@ This is a simple Python boilerplate project that can be used as a starting point
 1. Clone the repository:
 
     ```bash
-    git clone git@github.com:acn3to/python-boilerplate.git
+    git clone git@.github.com:acn3to/python-boilerplate.git
     ```
 
 2. Navigate to the project directory:
@@ -52,13 +52,7 @@ This is a simple Python boilerplate project that can be used as a starting point
 
 #### Running with Docker
 
-1. Build the Docker image:
-
-    ```bash
-    docker compose build
-    ```
-
-2. Start the Docker containers:
+1. Build and Start the Docker containers:
 
     ```bash
     docker compose up
@@ -90,3 +84,10 @@ This project includes automated testing using GitHub Actions. Whenever changes a
 
 This ensures that code quality is maintained and that tests pass before merging changes into the main branch.
 
+## Configuring .pylintrc
+
+The .pylintrc file in the root directory of the project contains configuration settings for pylint, a Python code quality checker. Pylint uses this file to determine which checks and conventions to apply when analyzing your code.
+
+You can customize the .pylintrc file to adjust the linting rules according to your preferences. For example, you can enable or disable specific checks, set the severity level for violations, and configure various aspects of pylint's behavior.
+
+For detailed documentation on the configuration options available in the .pylintrc file, refer to the [official pylint documentation](https://pylint.readthedocs.io/en/stable/).
