@@ -7,39 +7,55 @@ on:
 
 jobs:
   build-and-test:
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+
     runs-on: ubuntu-latest
+
+    # Step to cache dependencies
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
+      # Cache dependencies using actions/cache
+      - name: Cache dependencies
+        uses: actions/cache@v2
         with:
-          python-version: '3.11'
+          path: ~/.cache/pypoetry
+          key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-poetry-
 
+      # Set up Python and install Poetry
+      - name: Set up Python and Poetry
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
       - name: Install Poetry
         run: |
           curl -sSL https://install.python-poetry.org | python -
 
+      # Install dependencies
       - name: Install dependencies
         run: |
           poetry install --no-interaction
 
-      - name: Run Pylint
+      # Parallelize linting and testing steps
+      - name: Run linting and tests
         run: |
-          poetry run pylint src/
-
-      - name: Run tests
-        run: |
-          poetry run pytest
+          poetry run pylint src/ &
+          poetry run pytest &
+          wait
 
   build-docker:
     runs-on: ubuntu-latest
     needs: build-and-test
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
+      # Build Docker image
       - name: Build Docker image
         run: |
           docker compose build
@@ -49,8 +65,9 @@ jobs:
     needs: build-docker
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
+      # Run Docker container
       - name: Run Docker container
         run: |
           docker compose up -d

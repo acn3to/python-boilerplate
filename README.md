@@ -18,7 +18,7 @@ This is a simple Python boilerplate project that can be used as a starting point
 ├── poetry.lock
 ├── pyproject.toml
 ├── .pylintrc
-├── run_process.sh
+├── build_project.sh
 └── README.md
 ```
 
@@ -97,7 +97,7 @@ For detailed documentation on the configuration options available in the .pylint
 
 ## Quick Setup with Shell Script
 
-To streamline the setup and testing of your Python project, you can run an automated process using the provided shell script `run_process.sh`. This script automates the following steps:
+To streamline the setup and testing of your Python project, you can run an automated process using the provided shell script `build_project.sh`. This script automates the following steps:
 
 1. **Cloning the Repository (if necessary):**
    - If you haven't already cloned the repository, the script will clone it into a directory named `python-boilerplate` in the current directory.
@@ -121,21 +121,21 @@ To streamline the setup and testing of your Python project, you can run an autom
 To run the automated process, follow these steps:
 
 1. **Download the Script:**
-   - Right-click on the following link and select "Save link as..." to download the script: [run_process.sh](https://raw.githubusercontent.com/acn3to/python-boilerplate/main/run_process.sh?raw=true)
-   - Alternatively, you can create a new file named `run_process.sh` in the root directory of your project and copy the content of the script from the provided instructions.
+   - Right-click on the following link and select "Save link as..." to download the script: [build_project.sh](https://raw.githubusercontent.com/acn3to/python-boilerplate/main/build_project.sh?raw=true)
+   - Alternatively, you can create a new file named `build_project.sh` in the root directory of your project and copy the content of the script from the provided instructions.
 
 2. **Make the Script Executable:**
    - Open your terminal or command prompt.
-   - Navigate to the directory where you saved the `run_process.sh` file.
+   - Navigate to the directory where you saved the `build_project.sh` file.
    - Run the following command to give execute permissions to the script:
      ```bash
-     chmod +x run_process.sh
+     chmod +x build_project.sh
      ```
 
 3. **Run the Script:**
    - Once the script is executable, you can run it using the following command:
      ```bash
-     ./run_process.sh
+     ./build_project.sh
      ```
    - This will initiate the automated process, handling all the setup and testing steps for your Python project.
 
