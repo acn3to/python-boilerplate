@@ -60,7 +60,7 @@ jobs:
     needs: [build-and-test, build-docker, test-docker]
     steps:
       - name: Check build status
-        if: ${{ needs.build-and-test.outcome != 'success' || needs.build-docker.outcome != 'success' || needs.test-docker.outcome != 'success' }}
+        if: ${{ failure() }}
         run: |
-          echo "Build or test failed, stopping push..."
+          echo "Build failed, stopping push..."
           exit 1
