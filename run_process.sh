@@ -11,7 +11,7 @@ else
 fi
 
 # Clone the repository
-git clone git@.github.com:acn3to/python-boilerplate.git "$DIR"/python-boilerplate
+git clone git@github.com:acn3to/python-boilerplate.git "$DIR"/python-boilerplate
 
 # Navigate to the script's directory
 cd "$DIR"/python-boilerplate || exit
