@@ -53,7 +53,7 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker compose up
+          docker compose up -d
 
   check-status:
     runs-on: ubuntu-latest

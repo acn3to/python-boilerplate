@@ -39,4 +39,4 @@ docker compose build
 
 # Start Docker containers
 echo "Starting Docker containers..."
-docker compose up
+docker compose up -d
