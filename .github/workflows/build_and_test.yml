@@ -42,7 +42,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t boilerplate-app .
+          docker compose build
 
   test-docker:
     runs-on: ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run boilerplate-app poetry run pytest
+          docker compose up
 
   check-status:
     runs-on: ubuntu-latest
