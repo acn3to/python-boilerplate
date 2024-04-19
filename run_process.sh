@@ -1,11 +1,10 @@
 #!/bin/bash
 
 # Determine the directory of the script based on the shell being used
-SHELL_NAME=$(ps -p $$ -o args= | awk '{print $1}')
-if [[ "$SHELL_NAME" == *"bash"* ]]; then
-    DIR=$(dirname "$(realpath "$BASH_SOURCE")")
-elif [[ "$SHELL_NAME" == *"zsh"* ]]; then
-    DIR="$(dirname "$(realpath "$0")")"
+if [[ "$0" == *"bash"* ]]; then
+    DIR="$(dirname "$BASH_SOURCE")"
+elif [[ "$0" == *"zsh"* ]]; then
+    DIR="$(dirname "$0")"
 else
     echo "Unsupported shell: $SHELL_NAME"
     exit 1
@@ -33,3 +32,11 @@ poetry run pylint src/
 
 # Run tests
 poetry run pytest
+
+# Build Docker image
+echo "Building Docker image..."
+docker compose build
+
+# Start Docker containers
+echo "Starting Docker containers..."
+docker compose up

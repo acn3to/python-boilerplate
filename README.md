@@ -111,12 +111,16 @@ To streamline the setup and testing of your Python project, you can run an autom
    - Pylint is a tool that checks for errors and enforces coding standards. The script runs Pylint on the source code located in the `src` directory.
 
 5. **Running Tests:**
-   - Finally, the script runs unit tests using pytest to ensure the functionality of the Python application.
+   - Unit tests are executed using pytest to verify the functionality of the Python application.
 
+6. **Building and Running with Docker:**
+   - Docker containers are built using the Dockerfile and docker-compose.yml provided in the project.
+   - The containers are started to run your Python application.
+     
 To run the automated process, follow these steps:
 
 1. **Download the Script:**
-   - Right-click on the following link and select "Save link as..." to download the script: [run_process.sh](link_to_raw_script)
+   - Right-click on the following link and select "Save link as..." to download the script: [run_process.sh](https://raw.githubusercontent.com/acn3to/python-boilerplate/main/run_process.sh?raw=true)
    - Alternatively, you can create a new file named `run_process.sh` in the root directory of your project and copy the content of the script from the provided instructions.
 
 2. **Make the Script Executable:**
